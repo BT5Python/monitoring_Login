@@ -2,9 +2,12 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>evolution is my revolution - Login Portal</title>
+<title>
+evolution is my revolution - Login Portal
+</title>
 
 <style>
 
@@ -15,6 +18,7 @@ box-sizing:border-box;
 }
 
 /* VIDEO */
+
 video#bg-video{
 position:fixed;
 top:0;
@@ -26,33 +30,39 @@ z-index:-2;
 }
 
 /* OVERLAY */
+
 .overlay{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.55);
+background:
+rgba(0,0,0,.55);
 z-index:-1;
 }
 
-/* KONTEN */
+/* CONTENT */
+
 .content{
 position:fixed;
 top:50%;
 left:50%;
-transform:translate(-50%,-50%);
+transform:
+translate(-50%,-50%);
 width:90%;
 max-width:450px;
 text-align:center;
-font-family:Courier New;
+font-family:
+Courier New;
 color:white;
 }
 
 h1{
 font-size:2em;
 margin-bottom:25px;
-text-shadow:0 0 8px #00ff00;
+text-shadow:
+0 0 8px #00ff00;
 line-height:.5;
 }
 
@@ -65,9 +75,11 @@ gap:12px;
 input{
 width:100%;
 padding:12px;
-border:1px solid #00ff00;
+border:
+1px solid #00ff00;
 border-radius:6px;
-background:rgba(0,0,0,.3);
+background:
+rgba(0,0,0,.3);
 color:white;
 font-size:1em;
 text-align:center;
@@ -92,7 +104,8 @@ transition:.3s;
 
 button:hover{
 background:#00cc00;
-box-shadow:0 0 12px #00ff00;
+box-shadow:
+0 0 12px #00ff00;
 }
 
 </style>
@@ -101,6 +114,7 @@ box-shadow:0 0 12px #00ff00;
 <body>
 
 <!-- VIDEO -->
+
 <video
 id="bg-video"
 autoplay
@@ -109,19 +123,27 @@ loop
 playsinline>
 
 <source
-src="Desain tanpa judul (2).mpeg/mp4"
-type="video/mp4">
+src=
+"Desain tanpa judul (2).mp4"
+type=
+"video/mp4">
 
 </video>
 
-<div class="overlay"></div>
+<div class="overlay">
+</div>
 
 <!-- AUDIO -->
-<audio autoplay loop>
+
+<audio
+autoplay
+loop>
 
 <source
-src="Hymne-TNI-Angkatan-Udara.aac"
-type="audio/mpeg">
+src=
+"Hymne-TNI-Angkatan-Udara.aac"
+type=
+"audio/mpeg">
 
 </audio>
 
@@ -129,11 +151,17 @@ type="audio/mpeg">
 
 <div class="content">
 
-<h1>KOMANDAN</h1>
-<h1>PUSLAT KODIKLATAU</h1>
+<h1>
+KOMANDAN
+</h1>
+
+<h1>
+PUSLAT KODIKLATAU
+</h1>
 
 <form
-onsubmit="return loginSuccess(event)">
+onsubmit=
+"return loginSuccess(event)">
 
 <input
 type="email"
@@ -149,7 +177,8 @@ placeholder="Password"
 required
 autocomplete="off">
 
-<button type="submit">
+<button
+type="submit">
 
 LOGIN
 
@@ -172,7 +201,8 @@ if(
 elem.requestFullscreen
 ){
 
-elem.requestFullscreen()
+elem
+.requestFullscreen()
 .catch(()=>{});
 
 }
@@ -185,9 +215,12 @@ return(
 
 window.matchMedia(
 "(display-mode: standalone)"
-).matches ||
+).matches
 
-window.navigator.standalone===true
+||
+
+window.navigator
+.standalone===true
 
 );
 
@@ -212,7 +245,9 @@ navigator.userAgent
 ||
 
 navigator.userAgent
-.includes("Android")
+.includes(
+"Android"
+)
 
 ){
 
@@ -223,7 +258,8 @@ forceFullscreen,
 
 }
 
-document.addEventListener(
+document
+.addEventListener(
 
 "click",
 
@@ -266,22 +302,61 @@ from
 
 "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
+import {
+
+getDatabase,
+ref,
+get
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBwVSDVz1UfDRH5rV8IB_fnTeoF3WuFpc8",
-  authDomain: "monitoringlogin-b175c.firebaseapp.com",
-  projectId: "monitoringlogin-b175c",
-  storageBucket: "monitoringlogin-b175c.firebasestorage.app",
-  messagingSenderId: "625313862094",
-  appId: "1:625313862094:web:185f1b4fb5508b0f055b9f",
-  measurementId: "G-VDFGBXYV87"
+
+apiKey:
+"AIzaSyBwVSDVz1UfDRH5rV8IB_fnTeoF3WuFpc8",
+
+authDomain:
+"monitoringlogin-b175c.firebaseapp.com",
+
+databaseURL:
+"https://monitoringlogin-b175c-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+projectId:
+"monitoringlogin-b175c",
+
+storageBucket:
+"monitoringlogin-b175c.firebasestorage.app",
+
+messagingSenderId:
+"625313862094",
+
+appId:
+"1:625313862094:web:185f1b4fb5508b0f055b9f",
+
+measurementId:
+"G-VDFGBXYV87"
+
 };
+
 const app=
+
 initializeApp(
 firebaseConfig
 );
 
 const auth=
+
 getAuth(
+app
+);
+
+const db=
+
+getDatabase(
 app
 );
 
@@ -320,9 +395,28 @@ password
 
 );
 
+/* AMBIL URL DARI FIREBASE */
+
+const snap=
+
+await get(
+
+ref(
+db,
+"config/redirect"
+)
+
+);
+
+const target=
+
+snap.val();
+
+/* REDIRECT */
+
 window.location.href=
 
-"https://monitoringlogin-b175c-default-rtdb.asia-southeast1.firebasedatabase.app";
+target;
 
 }
 
