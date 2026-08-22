@@ -1,0 +1,36 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/database",
+      "destination": "/database.html"
+    },
+    {
+      "source": "/jabkosong",
+      "destination": "/Jabkosong.html"
+    },
+    {
+      "source": "/emergency",
+      "destination": "/emergencybox.html"
+    },
+    {
+      "source": "/personel",
+      "destination": "/personelpuslat.html"
+    },
+    {
+      "source": "/pemuktahiran",
+      "destination": "/pemuktahirandata.html"
+    },
+    {
+      "source": "/riwayat",
+      "destination": "/riwayathidup.html"
+    }
+  ]
+}
